@@ -5,12 +5,14 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 type LettersType = [string, string, string, string, string]
 
 interface WordleState {
-    lettersInput: LettersType
+    lettersInput: LettersType,
+    currentRow: number
 }
 
 // Define the initial state using that type
 const initialState: WordleState = {
     lettersInput: ['', '', '', '', '',],
+    currentRow: 1
 }
 
 export const wordleSlice = createSlice({
@@ -20,6 +22,9 @@ export const wordleSlice = createSlice({
         setLettersInput: (state, action: PayloadAction<LettersType>) => {
             state.lettersInput = action.payload
         },
+        setCurrentRow: (state, action: PayloadAction<number>) => {
+            state.currentRow = action.payload
+        }
     },
 })
 
