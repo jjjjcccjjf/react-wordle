@@ -3,19 +3,57 @@
 @tailwind utilities;
 
 @keyframes scaleAnimation {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.125);
-    }
+  50% {
+    transform: scale(1.125);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .animate-pop {
-    animation: scaleAnimation 0.075s forwards;
+  animation: scaleAnimation 0.075s forwards;
+}
+
+@keyframes flipAnimation {
+  0% {
+    transform: perspective(2000px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(2000px) rotateX(90deg);
+  }
+  
+  100% {
+    transform: perspective(2000px) rotateX(0deg);
+  }
+}
+
+.animate-flip-0 {
+  animation: flipAnimation 1s forwards;
+  animation-delay: 0ms;
+}
+
+.animate-flip-1 {
+  animation: flipAnimation 1s forwards;
+  animation-delay: 400ms;
+}
+
+.animate-flip-2 {
+  animation: flipAnimation 1s forwards;
+  animation-delay: 800ms;
+}
+
+.animate-flip-3 {
+  animation: flipAnimation 1s forwards;
+  animation-delay: 1200ms;
+}
+
+.animate-flip-4 {
+  animation: flipAnimation 1s forwards;
+  animation-delay: 1600ms;
 }
